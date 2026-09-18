@@ -1,0 +1,16 @@
+.ERASE
+
+CC=WCL
+GA=A:\GA
+
+
+CFLAGS=-I$(GA)\INCLUDE -zk0 -mh
+# turbo c compatible mode
+CFLAGS+=-ecc -zp1
+# C99 mode
+CFLAGS+=-za99
+
+all: lookga.exe
+
+lookga.exe : lookga.c prcgs.c
+	$(CC) $(CFLAGS) -fe=$@ lookga.c prcgs.c $(GA)\TURBOC\GALIB.LIB
