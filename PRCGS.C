@@ -20,11 +20,15 @@ int StartReadPRCGS(const char* filename)
 	if (fread(&Header,sizeof(PRCGSHeader),1,ReadFile)<1)
 	{
 		printf("File is too small\n");
+		fclose(ReadFile);
+		ReadFile = NULL;
 		return 1;
 	}
 	if ((Header.hdr[0]!='P')||(Header.hdr[1]!='_')||(Header.hdr[2]!='3'))
 	{
 		printf("Not PRCGS Data\n");
+		fclose(ReadFile);
+		ReadFile = NULL;
 		return 1;
 	}
 	
