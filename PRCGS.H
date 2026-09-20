@@ -16,5 +16,4 @@ extern const unsigned int GetHeight(void); // 現在のヘッダ情報に基づく高さ
   0:正常終了 1:異常終了
  */
 extern int Extract(unsigned char* r,unsigned char* g,unsigned char* b);
-extern void FinishReadPRCGS(void);
 #endif
